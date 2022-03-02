@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="streamedian.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <video id="test_video" controls autoplay src="rtsp://127.0.0.1:8554/test/"></video>
+    <!-- <video id="test_video" controls autoplay src="rtsp://wowzaec2demo.streamlock.net/vod/mp4:BigBuckBunny_115k.mov"></video> -->
+</body>
+<style>
+</style>
+<script>
+    window.addEventListener("load",()=>{
+        if (window.Streamedian) {
+        var playerOptions = {
+            socket: "wss://streamedian.com/ws/",            
+            redirectNativeMediaErrors : true,
+            bufferDuration: 30,
+        };
+    
+        player = Streamedian.player("test_video", playerOptions);
+    }
+
+    })
+</script>
+</html>

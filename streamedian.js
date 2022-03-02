@@ -3133,7 +3133,7 @@
                     'Session': this.session
                 });
             } else {
-                return this.client.sendRequest('OPTIONS', '*');
+                return this.client.sendRequest('OPTIONS', this.url);
             }
         }
 
